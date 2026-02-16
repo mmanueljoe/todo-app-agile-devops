@@ -27,7 +27,7 @@ jobs:
       - name: Run tests with coverage
         run: |
           echo "Running unit tests with coverage..."
-          yarn test -- --coverage
+          yarn test --run --coverage
         env:
           CI: true
 
