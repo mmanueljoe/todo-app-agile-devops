@@ -1,9 +1,9 @@
-## Sprint 1 Plan
+# Sprint 1 Plan
 
 - **Sprint Duration**: 1 sprint
 - **Total Commitment**: 11 story points
 
-### Selected User Stories
+## Selected User Stories
 
 - **Add Tasks**  
   - **Estimate**: 3 points  
@@ -17,7 +17,7 @@
   - **Estimate**: 5 points  
   - **Summary**: Enable toggling task completion state with clear visual feedback and persistence.
 
-### Why These Stories?
+## Why These Stories?
 
 - **Core functionality**: These stories represent the core of the Todo Dashboard—creating tasks, organizing them, and tracking completion.
 - **User value early**: Together they deliver an immediately usable product that helps users manage their tasks even before advanced features (deletion, persistence, progress).

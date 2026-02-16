@@ -1,9 +1,9 @@
-## Sprint 2 Plan
+# Sprint 2 Plan
 
 - **Sprint Duration**: 1 sprint
 - **Total Commitment**: 11 story points
 
-### Selected User Stories
+## Selected User Stories
 
 - **Delete Tasks**  
   - **Estimate**: 3 points  
@@ -17,7 +17,7 @@
   - **Estimate**: 3 points  
   - **Summary**: Provide a visual indicator of overall progress (e.g., completed vs total tasks).
 
-### Why These Stories?
+## Why These Stories?
 
 - **Completing the core experience**: These features turn the basic dashboard into a more polished, real-world-ready tool.
 - **Persistence and feedback**: Saving to the browser ensures users do not lose their data; progress visualization gives immediate feedback and motivation.
