@@ -7,7 +7,7 @@
     "useDefineForClassFields": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "module": "ESNext",
-    "types": ["vite/client"],
+    "types": ["vite/client", "vitest/globals"],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -16,6 +16,15 @@
     "moduleDetection": "force",
     "noEmit": false,
     "jsx": "react-jsx",
+
+    /* Base URL & path aliases */
+    "baseUrl": "./src",
+    "paths": {
+      "@component/*": ["component/*"],
+      "@hooks/*": ["hooks/*"],
+      "@types/*": ["types/*"],
+      "@test/*": ["__test__/*"]
+    },
 
     /* Linting */
     "strict": true,

@@ -6,11 +6,21 @@
     "target": "ESNext",
     "lib": ["ESNext"],
     "module": "ESNext",
-    "types": ["node"],
+    "types": ["node", "vitest/globals"],
+    "verbatimModuleSyntax": true,
     "skipLibCheck": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+
+    /* Base URL & path aliases (for tooling that reads this config) */
+    "baseUrl": "./src",
+    "paths": {
+      "@component/*": ["component/*"],
+      "@hooks/*": ["hooks/*"],
+      "@types/*": ["types/*"],
+      "@test/*": ["__test__/*"]
+    },
 
     /* Linting */
     "strict": true,
