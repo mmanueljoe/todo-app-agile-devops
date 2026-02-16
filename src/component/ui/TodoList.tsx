@@ -6,14 +6,26 @@ import { TodoItem } from '@component/ui/TodoItem';
 export interface TodoListProps {
   todos: Todo[];
   onToggleTodoCompleted: (id: string) => void;
+  onDeleteTodo: (id: string) => void;
 }
 
-const TodoListComponent: FC<TodoListProps> = ({ todos, onToggleTodoCompleted }) => {
+const TodoListComponent: FC<TodoListProps> = ({
+  todos,
+  onToggleTodoCompleted,
+  onDeleteTodo,
+}) => {
   const handleToggle = useCallback(
     (id: string) => {
       onToggleTodoCompleted(id);
     },
     [onToggleTodoCompleted],
+  );
+
+  const handleDelete = useCallback(
+    (id: string) => {
+      onDeleteTodo(id);
+    },
+    [onDeleteTodo],
   );
 
   if (todos.length === 0) {
@@ -27,7 +39,12 @@ const TodoListComponent: FC<TodoListProps> = ({ todos, onToggleTodoCompleted }) 
   return (
     <ul className="divide-y divide-gray-200 rounded-lg bg-white shadow-sm">
       {todos.map((todo) => (
-        <TodoItem key={todo.id} todo={todo} onToggleCompleted={handleToggle} />
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          onToggleCompleted={handleToggle}
+          onDelete={handleDelete}
+        />
       ))}
     </ul>
   );

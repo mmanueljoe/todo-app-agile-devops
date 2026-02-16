@@ -5,9 +5,10 @@ import type { FilterCategory } from '@component/ui/TodoFilters';
 import { TodoForm } from '@component/ui/TodoForm';
 import { TodoFilters } from '@component/ui/TodoFilters';
 import { TodoList } from '@component/ui/TodoList';
+import { TodoProgress } from '@component/ui/TodoProgress';
 
 export const TodoDashboard: FC = () => {
-  const { todos, addTodo, toggleTodoCompleted } = useTodos();
+  const { todos, addTodo, toggleTodoCompleted, deleteTodo } = useTodos();
   const [selectedCategory, setSelectedCategory] = useState<FilterCategory>('all');
 
   const filteredTodos = useMemo(
@@ -37,12 +38,18 @@ export const TodoDashboard: FC = () => {
 
       <TodoForm onAddTodo={addTodo} />
 
+      <TodoProgress todos={todos} />
+
       <div className="space-y-2 rounded-lg bg-white p-4 shadow-sm">
         <TodoFilters
           selectedCategory={selectedCategory}
           onChangeCategory={setSelectedCategory}
         />
-        <TodoList todos={filteredTodos} onToggleTodoCompleted={toggleTodoCompleted} />
+        <TodoList
+          todos={filteredTodos}
+          onToggleTodoCompleted={toggleTodoCompleted}
+          onDeleteTodo={deleteTodo}
+        />
       </div>
     </section>
   );

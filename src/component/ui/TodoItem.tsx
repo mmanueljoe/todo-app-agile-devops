@@ -5,6 +5,7 @@ import type { Todo } from '@models/todo';
 export interface TodoItemProps {
   todo: Todo;
   onToggleCompleted: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 const categoryLabelMap: Record<Todo['category'], string> = {
@@ -21,9 +22,23 @@ const categoryClassMap: Record<Todo['category'], string> = {
   other: 'bg-gray-100 text-gray-800',
 };
 
-const TodoItemComponent: FC<TodoItemProps> = ({ todo, onToggleCompleted }) => {
+const TodoItemComponent: FC<TodoItemProps> = ({
+  todo,
+  onToggleCompleted,
+  onDelete,
+}) => {
   const handleToggleChange = (): void => {
     onToggleCompleted(todo.id);
+  };
+
+  const handleDelete = (): void => {
+    if (
+      window.confirm(
+        `Are you sure you want to delete "${todo.title}"? This action cannot be undone.`,
+      )
+    ) {
+      onDelete(todo.id);
+    }
   };
 
   return (
@@ -41,7 +56,7 @@ const TodoItemComponent: FC<TodoItemProps> = ({ todo, onToggleCompleted }) => {
 
       <label
         htmlFor={`todo-checkbox-${todo.id}`}
-        className="flex w-full cursor-pointer flex-col gap-1"
+        className="flex flex-1 cursor-pointer flex-col gap-1"
       >
         <div className="flex items-center justify-between gap-2">
           <span
@@ -70,6 +85,15 @@ const TodoItemComponent: FC<TodoItemProps> = ({ todo, onToggleCompleted }) => {
           </span>
         ) : null}
       </label>
+
+      <button
+        type="button"
+        onClick={handleDelete}
+        className="ml-auto rounded-md px-2 py-1 text-sm text-red-600 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+        aria-label={`Delete task "${todo.title}"`}
+      >
+        Delete
+      </button>
     </li>
   );
 };
@@ -81,6 +105,7 @@ export const TodoItem = memo(
     previous.todo.title === next.todo.title &&
     previous.todo.description === next.todo.description &&
     previous.todo.category === next.todo.category &&
-    previous.todo.completed === next.todo.completed,
+    previous.todo.completed === next.todo.completed &&
+    previous.onDelete === next.onDelete,
 );
 
