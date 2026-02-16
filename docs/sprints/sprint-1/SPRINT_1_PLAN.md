@@ -15,7 +15,7 @@
 
 - **Mark Tasks as Complete**  
   - **Estimate**: 5 points  
-  - **Summary**: Enable toggling task completion state with clear visual feedback and persistence.
+  - **Summary**: Enable toggling completion state with clear visual feedback and persistence.
 
 ## Why These Stories?
 
@@ -45,3 +45,4 @@
   - Perform end-to-end walkthrough of all implemented stories against acceptance criteria.
   - Refine UI/UX (styling, responsiveness, accessibility basics).
   - Fix bugs, clean up code, ensure all tests are passing and Git history is clean.
+

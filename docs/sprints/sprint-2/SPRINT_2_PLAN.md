@@ -46,3 +46,4 @@
 - Implement **Delete Tasks** next, wiring it into both the in-memory state and browser storage.
 - Finish with **Show Progress**, leveraging the persisted and up-to-date task data for accurate metrics.
 - Reserve time at the end of the sprint for integration testing, UI polish, and verifying all stories against the Definition of Done.
+
