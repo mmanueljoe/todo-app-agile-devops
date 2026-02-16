@@ -1,4 +1,4 @@
-## Product Vision
+# Product Vision
 
 Build a simple, responsive React Todo Dashboard that helps users quickly capture, organize, and track their daily tasks in the browser, with clear visibility into progress.
 

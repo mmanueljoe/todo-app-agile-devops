@@ -1,4 +1,4 @@
-## Definition of Done
+# Definition of Done
 
 For any user story in the React Todo Dashboard to be considered **Done**, all of the following must be true:
 
