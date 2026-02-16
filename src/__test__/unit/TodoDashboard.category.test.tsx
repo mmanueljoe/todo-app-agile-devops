@@ -6,7 +6,9 @@ describe('TodoDashboard categories', () => {
     render(<App />);
 
     const titleInput = screen.getByLabelText(/task title/i);
-    const categorySelect = screen.getByLabelText(/category/i);
+    const categorySelect = screen.getAllByLabelText(/category/i).find(
+      (el) => el.tagName === 'SELECT',
+    ) as HTMLSelectElement;
     const addButton = screen.getByRole('button', { name: /add task/i });
 
     fireEvent.change(titleInput, { target: { value: 'Project work' } });
@@ -21,7 +23,9 @@ describe('TodoDashboard categories', () => {
     render(<App />);
 
     const titleInput = screen.getByLabelText(/task title/i);
-    const categorySelect = screen.getByLabelText(/category/i);
+    const categorySelect = screen.getAllByLabelText(/category/i).find(
+      (el) => el.tagName === 'SELECT',
+    ) as HTMLSelectElement;
     const addButton = screen.getByRole('button', { name: /add task/i });
 
     // Work task
@@ -46,7 +50,9 @@ describe('TodoDashboard categories', () => {
     render(<App />);
 
     const titleInput = screen.getByLabelText(/task title/i);
-    const categorySelect = screen.getByLabelText(/category/i);
+    const categorySelect = screen.getAllByLabelText(/category/i).find(
+      (el) => el.tagName === 'SELECT',
+    ) as HTMLSelectElement;
     const addButton = screen.getByRole('button', { name: /add task/i });
 
     fireEvent.change(titleInput, { target: { value: 'Task A' } });
