@@ -1,73 +1,149 @@
-# React + TypeScript + Vite
+# React Todo Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, responsive React Todo Dashboard that helps users quickly capture, organize, and track their daily tasks in the browser, with clear visibility into progress.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Add Tasks**: Create new tasks with a title and optional description
+- 🏷️ **Categorize Tasks**: Assign tasks to categories (Work, Personal, Urgent, Other) and filter by category
+- ✓ **Mark Complete**: Toggle task completion status with visual feedback
+- 🗑️ **Delete Tasks**: Remove tasks with confirmation dialog to prevent accidental deletion
+- 💾 **Save to Browser**: Tasks persist in localStorage, so your data survives page refreshes
+- 📊 **Show Progress**: Visual progress indicator showing completed vs total tasks
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vitest** - Test runner
+- **React Testing Library** - Component testing
+- **GitHub Actions** - CI/CD pipeline
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Start the development server:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+yarn dev
 ```
+
+The app will be available at `http://localhost:5173`
+
+## Testing
+
+Run the test suite:
+
+```bash
+yarn test
+```
+
+Run tests in watch mode:
+
+```bash
+yarn test --watch
+```
+
+Run tests with coverage:
+
+```bash
+yarn test --coverage
+```
+
+## Building
+
+Build the project for production:
+
+```bash
+yarn run build
+```
+
+The production build will be in the `dist` directory.
+
+## Type Checking
+
+Run TypeScript type checking:
+
+```bash
+yarn type-check
+```
+
+## Linting and Formatting
+
+Lint the codebase:
+
+```bash
+yarn lint
+```
+
+Format the codebase:
+
+```bash
+yarn format
+```
+
+## Folder Structure
+
+```
+src/
+├── component/          # React components
+│   ├── TodoDashboard.tsx    # Main dashboard component
+│   └── ui/            # UI components
+│       ├── TodoForm.tsx      # Task creation form
+│       ├── TodoList.tsx      # Task list container
+│       ├── TodoItem.tsx      # Individual task item
+│       ├── TodoFilters.tsx   # Category filter component
+│       └── TodoProgress.tsx  # Progress indicator
+├── hooks/             # Custom React hooks
+│   └── useTodos.ts    # Todo state management hook
+├── models/            # TypeScript types and interfaces
+│   └── todo.ts        # Todo-related types
+└── __test__/          # Test files
+    ├── unit/          # Unit tests
+    └── TodoForm.test.tsx
+```
+
+## Key Components
+
+### TodoDashboard
+Main container component that orchestrates all features and manages the overall state.
+
+### TodoForm
+Form component for adding new tasks with title, description, and category selection.
+
+### TodoList
+Renders a list of TodoItem components with filtering support.
+
+### TodoItem
+Individual task item with completion toggle, category badge, and delete button.
+
+### TodoFilters
+Category filter dropdown for filtering tasks by category.
+
+### TodoProgress
+Progress indicator component showing total tasks, completed tasks, and percentage.
+
+### useTodos Hook
+Custom hook managing todo state, localStorage persistence, and CRUD operations.
+
+## Project Structure
+
+This project follows Agile development practices with:
+- Product backlog with user stories
+- Sprint planning and execution
+- Definition of Done
+- Sprint reviews and retrospectives
+- CI/CD pipeline with automated testing
+
+See `docs/` folder for detailed documentation including backlog, sprint plans, reviews, and retrospectives.
+
+## License
+
+MIT License
