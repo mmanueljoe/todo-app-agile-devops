@@ -24,6 +24,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Type check
+        run: |
+          echo "Running TypeScript type check..."
+          yarn type-check
+
       - name: Run tests with coverage
         run: |
           echo "Running unit tests with coverage..."
