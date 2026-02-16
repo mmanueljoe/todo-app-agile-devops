@@ -16,7 +16,7 @@ export default defineConfig({
       '@': resolve(__dirname, './src'),
       '@component': resolve(__dirname, './src/component'),
       '@hooks': resolve(__dirname, './src/hooks'),
-      '@types': resolve(__dirname, './src/types'),
+      '@models': resolve(__dirname, './src/models'),
       '@test': resolve(__dirname, './src/__test__'),
     },
   },

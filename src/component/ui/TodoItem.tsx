@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { memo } from 'react';
-import type { Todo } from '@types/todo';
+import type { Todo } from '@models/todo';
 
 export interface TodoItemProps {
   todo: Todo;

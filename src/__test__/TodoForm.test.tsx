@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
 import { fireEvent, render, screen } from '@testing-library/react';
-import type { AddTodoPayload } from '@types/todo';
+import type { AddTodoPayload } from '@models/todo';
 import { TodoForm } from '@component/ui/TodoForm';
 
 describe('TodoForm', () => {
@@ -35,7 +35,7 @@ describe('TodoForm', () => {
     fireEvent.click(submitButton);
 
     expect(handleAddTodo).not.toHaveBeenCalled();
-    expect(screen.getByText(/title is required/i)).toBeInTheDocument();
+    expect(screen.getByText(/title is required/i)).toBeDefined();
   });
 });
 

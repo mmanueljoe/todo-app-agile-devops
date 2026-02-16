@@ -10,21 +10,21 @@
     "types": ["vite/client", "vitest/globals"],
     "skipLibCheck": true,
 
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@component/*": ["src/component/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@models/*": ["src/models/*"],
+      "@test/*": ["src/__test__/*"]
+    },
+
     /* Bundler mode */
     "moduleResolution": "bundler",
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": false,
     "jsx": "react-jsx",
-
-    /* Base URL & path aliases */
-    "baseUrl": "./src",
-    "paths": {
-      "@component/*": ["component/*"],
-      "@hooks/*": ["hooks/*"],
-      "@types/*": ["types/*"],
-      "@test/*": ["__test__/*"]
-    },
 
     /* Linting */
     "strict": true,

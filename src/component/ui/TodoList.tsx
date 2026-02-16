@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { memo, useCallback } from 'react';
-import type { Todo } from '@types/todo';
+import type { Todo } from '@models/todo';
 import { TodoItem } from '@component/ui/TodoItem';
 
 export interface TodoListProps {

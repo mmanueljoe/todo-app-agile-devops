@@ -1,6 +1,6 @@
 import type { FC, FormEvent } from 'react';
 import { memo, useState } from 'react';
-import type { AddTodoPayload, TodoCategory } from '@types/todo';
+import type { AddTodoPayload, TodoCategory } from '@models/todo';
 
 export interface TodoFormProps {
   onAddTodo: (payload: AddTodoPayload) => void;

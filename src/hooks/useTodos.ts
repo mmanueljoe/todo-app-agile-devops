@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import type { AddTodoPayload, Todo } from '@types/todo';
+import type { AddTodoPayload, Todo } from '@models/todo';
 
 export interface UseTodosResult {
   todos: Todo[];

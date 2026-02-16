@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { memo } from 'react';
-import type { TodoCategory } from '@types/todo';
+import type { TodoCategory } from '@models/todo';
 
 export type FilterCategory = TodoCategory | 'all';
 
